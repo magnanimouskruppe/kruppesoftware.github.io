@@ -281,14 +281,21 @@ body {
   margin-bottom: 8px;
 }
 
-.footer-email {
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.footer-email:hover {
+.footer-links a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
