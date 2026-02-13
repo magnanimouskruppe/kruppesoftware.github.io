@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buffr — Support</title>
+  <meta name="description" content="Get help with Buffr, the RTO attendance tracker for hybrid workers.">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .support-page {
+      min-height: 100vh;
+      padding: 80px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .support-content {
+      max-width: 640px;
+      width: 100%;
+    }
+    .support-content h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .support-content h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+    .support-content p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 16px;
+    }
+    .support-content a {
+      color: #4ECDC4;
+      text-decoration: none;
+    }
+    .support-content a:hover {
+      text-decoration: underline;
+    }
+    .support-content ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+    .support-content li {
+      font-size: 17px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .support-content li::before {
+      content: "•";
+      color: #7B68EE;
+      position: absolute;
+      left: 0;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      margin-bottom: 40px;
+    }
+    .back-link:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <section class="support-page">
+    <div class="support-content">
+      <a href="/" class="back-link">&larr; Back to Buffr</a>
+      <h1>Support</h1>
+      <p>Need help with Buffr? We're here for you.</p>
+
+      <h2>Contact Us</h2>
+      <p>For questions, bug reports, or feature requests, email us at:</p>
+      <p><a href="mailto:kruppesoftware@gmail.com">kruppesoftware@gmail.com</a></p>
+
+      <h2>FAQs</h2>
+
+      <h3 style="font-size: 18px; font-weight: 600; margin-top: 24px; margin-bottom: 8px;">How does Buffr work?</h3>
+      <p>Buffr tracks your office attendance against your company's RTO policy. Log each day as office, WFH, vacation, sick, or holiday, and Buffr calculates your "buffer" — how many flex days you have before hitting your threshold.</p>
+
+      <h3 style="font-size: 18px; font-weight: 600; margin-top: 24px; margin-bottom: 8px;">Is my data private?</h3>
+      <p>Yes. All your data is stored locally on your device. Nothing is sent to our servers or shared with anyone, including your employer. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+
+      <h3 style="font-size: 18px; font-weight: 600; margin-top: 24px; margin-bottom: 8px;">What tracking modes are supported?</h3>
+      <p>Buffr supports two modes:</p>
+      <ul>
+        <li><strong>Days per week</strong> — e.g., 2 office days every week</li>
+        <li><strong>Days per window</strong> — e.g., 16 office days per rolling 8-week period</li>
+      </ul>
+
+      <h3 style="font-size: 18px; font-weight: 600; margin-top: 24px; margin-bottom: 8px;">How do I change my RTO policy settings?</h3>
+      <p>Go to the Settings tab in the app to update your policy type, threshold, and tracking window at any time.</p>
+    </div>
+  </section>
+</body>
+</html>
