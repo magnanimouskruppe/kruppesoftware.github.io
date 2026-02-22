@@ -126,7 +126,7 @@
       <a href="/" class="back-link">&larr; Back to Buffr</a>
 
       <h1>Privacy Policy</h1>
-      <p class="last-updated"><strong>Last Updated:</strong> February 7, 2026</p>
+      <p class="last-updated"><strong>Last Updated:</strong> February 22, 2026</p>
 
       <h2>Overview</h2>
       <p>Buffr ("the App") is designed with privacy as a core principle. Your data is stored locally on your device — never on our servers. We don't have accounts, we don't track you, and we don't sell data.</p>
@@ -147,7 +147,8 @@
         <li><strong>Your RTO policy configuration</strong> — Company name (if you choose to enter it), minimum days required, rolling window period, and your default weekly schedule.</li>
         <li><strong>Your day logs</strong> — Records of your daily status (Office, WFH, Vacation, Sick, Holiday).</li>
         <li><strong>Your planned days</strong> — Any future days you've scheduled in the calendar.</li>
-        <li><strong>Your preferences</strong> — App settings such as calculation adjustments and display options.</li>
+        <li><strong>Your preferences</strong> — App settings such as calculation adjustments, display options, and notification preferences.</li>
+        <li><strong>Your notification settings</strong> — Preferences for weekly summary day/time and policy change alerts. Notifications are scheduled locally on your device and are never sent through our servers.</li>
       </ul>
 
       <h2>Local Storage Only</h2>
@@ -164,10 +165,28 @@
       </ul>
       <p>Google's privacy practices apply to the feedback form. See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> for details.</p>
 
+      <h2>Company Policy Database</h2>
+      <p>Buffr includes an optional company policy database that lets you look up your company's RTO policy. This database is hosted on Google Firebase (Firestore).</p>
+      <ul>
+        <li>When you search for or select a company, the App fetches policy data from our Firebase database</li>
+        <li>We do not collect or store any information about which companies you search for or select</li>
+        <li>No personally identifiable information is sent to Firebase as part of these requests</li>
+        <li>If you submit a policy update or enforcement report, that submission is stored in Firebase but does not include any personal identifiers — only the policy data you provide</li>
+      </ul>
+
+      <h2>Notifications</h2>
+      <p>Buffr offers optional local notifications:</p>
+      <ul>
+        <li><strong>Weekly Summary</strong> — A configurable weekly reminder showing your current buffr and schedule</li>
+        <li><strong>Policy Change Alerts</strong> — An in-app banner when your company's RTO policy is updated in our database</li>
+      </ul>
+      <p>All notifications are scheduled locally on your device using Apple's notification system. No notification data is sent to or processed by our servers.</p>
+
       <h2>Third-Party Services</h2>
       <p>Buffr uses the following third-party services:</p>
       <ul>
-        <li><strong>Apple App Store</strong> — For app distribution and updates</li>
+        <li><strong>Apple App Store &amp; StoreKit</strong> — For app distribution, updates, and subscription management. Apple handles all payment processing; we never receive your payment details.</li>
+        <li><strong>Google Firebase (Firestore)</strong> — For hosting the read-only company policy database. No personal data is collected or stored.</li>
         <li><strong>Google Forms</strong> — For optional user feedback (only if you choose to submit)</li>
       </ul>
       <p>We do not use any third-party analytics, advertising, or tracking services.</p>
@@ -215,6 +234,8 @@
           <tr><td>Do you show ads or share data with advertisers?</td><td>No</td></tr>
           <tr><td>Can I delete my data?</td><td>Yes — in Settings or by deleting the App</td></tr>
           <tr><td>Do I need an account?</td><td>No</td></tr>
+          <tr><td>Do you send notification data to your servers?</td><td>No — notifications are scheduled locally on your device</td></tr>
+          <tr><td>Does the company database collect my data?</td><td>No — lookups are anonymous with no personal identifiers</td></tr>
           <tr><td>What about the feedback form?</td><td>Optional — uses Google Forms if you choose to submit</td></tr>
         </tbody>
       </table>
