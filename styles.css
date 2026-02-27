@@ -211,39 +211,79 @@ h2.value-text {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ── Screenshots ── */
+/* ── Screenshots Carousel ── */
 .screenshots {
   padding: 40px 0 80px;
   overflow: hidden;
 }
 
-.screenshots .container {
-  max-width: 100%;
-  padding: 0;
+.carousel {
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.screenshots-scroll {
+.carousel:active {
+  cursor: grabbing;
+}
+
+.carousel-track {
   display: flex;
-  gap: 24px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+  flex: 0 0 50%;
+  display: flex;
   justify-content: center;
-  padding: 0 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  align-items: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.35;
+  transform: scale(0.8);
 }
 
-.screenshots-scroll::-webkit-scrollbar {
-  display: none;
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.screenshot {
-  width: 280px;
+.carousel-slide img {
+  width: 300px;
   height: auto;
   border-radius: 24px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  scroll-snap-align: center;
-  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.carousel-dot.active {
+  background: linear-gradient(135deg, #7B68EE 0%, #4ECDC4 100%);
+  transform: scale(1.2);
 }
 
 /* ── FAQ ── */
@@ -415,7 +455,11 @@ h2.value-text {
     grid-template-columns: 1fr;
   }
 
-  .screenshot {
+  .carousel-slide {
+    flex: 0 0 70%;
+  }
+
+  .carousel-slide img {
     width: 240px;
   }
 

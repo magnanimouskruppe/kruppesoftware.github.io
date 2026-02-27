@@ -157,15 +157,32 @@
     </div>
   </section>
 
-  <!-- Screenshots -->
+  <!-- Screenshots Carousel -->
   <section class="screenshots">
-    <div class="container">
-      <div class="screenshots-scroll">
-        <img src="assets/screenshot-home.png" alt="Buffr home screen — log your work location in seconds, data never leaves your phone" class="screenshot">
-        <img src="assets/screenshot-calendar.png" alt="Buffr calendar view — see your forecast and plan around time off" class="screenshot">
-        <img src="assets/screenshot-company.png" alt="Buffr company tab — official and enforced policy details with Buffr Range chart" class="screenshot">
-        <img src="assets/screenshot-vacation.png" alt="Buffr vacation planner — model how time off affects your buffer" class="screenshot">
-        <img src="assets/screenshot-onboarding.png" alt="Buffr setup — auto-detects your company's RTO policy from our database" class="screenshot">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide active">
+          <img src="assets/screenshot-home.png" alt="Buffr home screen — log your work location in seconds, data never leaves your phone">
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/screenshot-calendar.png" alt="Buffr calendar view — see your forecast and plan around time off">
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/screenshot-company.png" alt="Buffr company tab — official and enforced policy details with Buffr Range chart">
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/screenshot-vacation.png" alt="Buffr vacation planner — model how time off affects your buffer">
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/screenshot-onboarding.png" alt="Buffr setup — auto-detects your company's RTO policy from our database">
+        </div>
+      </div>
+      <div class="carousel-dots">
+        <button class="carousel-dot active" aria-label="Slide 1"></button>
+        <button class="carousel-dot" aria-label="Slide 2"></button>
+        <button class="carousel-dot" aria-label="Slide 3"></button>
+        <button class="carousel-dot" aria-label="Slide 4"></button>
+        <button class="carousel-dot" aria-label="Slide 5"></button>
       </div>
     </div>
   </section>
@@ -314,5 +331,86 @@
     </div>
   </footer>
 
+  <script>
+  (function() {
+    var track = document.querySelector('.carousel-track');
+    var slides = document.querySelectorAll('.carousel-slide');
+    var dots = document.querySelectorAll('.carousel-dot');
+    var total = slides.length;
+    var current = 0;
+    var timer;
+    var startX = 0;
+    var isDragging = false;
+
+    function getSlideWidth() {
+      // Match CSS: 50% on desktop, 70% on mobile
+      return window.innerWidth <= 640 ? 70 : 50;
+    }
+
+    function goTo(index) {
+      current = ((index % total) + total) % total;
+      var slideWidth = getSlideWidth();
+      // Center the active slide: offset = current * slideWidth - (100 - slideWidth) / 2
+      var offset = current * slideWidth - (100 - slideWidth) / 2;
+      track.style.transform = 'translateX(' + (-offset) + '%)';
+
+      slides.forEach(function(s, i) {
+        s.classList.toggle('active', i === current);
+      });
+      dots.forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+      resetTimer();
+    }
+
+    function next() { goTo(current + 1); }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(next, 10000);
+    }
+
+    dots.forEach(function(dot, i) {
+      dot.addEventListener('click', function() { goTo(i); });
+    });
+
+    // Touch / swipe
+    var carousel = document.getElementById('carousel');
+    carousel.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) next();
+        else goTo(current - 1);
+      }
+    });
+
+    // Mouse drag
+    carousel.addEventListener('mousedown', function(e) {
+      startX = e.clientX;
+      isDragging = true;
+      e.preventDefault();
+    });
+
+    document.addEventListener('mouseup', function(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      var diff = startX - e.clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) next();
+        else goTo(current - 1);
+      }
+    });
+
+    // Initialize first slide as active
+    goTo(0);
+  })();
+  </script>
 </body>
 </html>
