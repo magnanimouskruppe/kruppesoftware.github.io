@@ -38,7 +38,7 @@
     "name": "Buffr - RTO Tracker",
     "operatingSystem": "iOS",
     "applicationCategory": "BusinessApplication",
-    "description": "Office attendance tracker for hybrid workers. Track your RTO compliance, see how many flex days you have, and forecast ahead.",
+    "description": "Office attendance tracker for hybrid workers. Track against your company's actual RTO policy, see how many flex days you have, forecast ahead, and plan vacations with confidence.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -94,10 +94,18 @@
       },
       {
         "@type": "Question",
+        "name": "Does Buffr know my company's RTO policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Buffr maintains a database of RTO policies for many companies. When you search for your company during setup, Buffr can auto-detect both the official policy and how it's actually enforced. You can track against either one, or set up custom rules. If your company isn't in our database, you can configure your policy manually in under a minute."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Is Buffr free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Buffr is free to download and use. Core features like day logging, buffer calculation, and calendar view are included for free. Buffr Pro unlocks advanced features like multi-week forecasting, enforcement monitoring, policy change alerts, and buffer notifications."
+          "text": "Buffr is free to download and use. Core features like day logging, buffer calculation, and calendar view are included for free. Buffr Pro unlocks advanced features like multi-week forecasting, company policy intelligence, vacation impact analysis, policy change alerts, and buffer notifications."
         }
       },
       {
@@ -153,9 +161,11 @@
   <section class="screenshots">
     <div class="container">
       <div class="screenshots-scroll">
-        <img src="assets/screenshot-home.png" alt="Buffr home screen showing your current buffer and weekly status" class="screenshot">
-        <img src="assets/screenshot-calendar.png" alt="Buffr calendar view with forecast chart" class="screenshot">
-        <img src="assets/screenshot-onboarding.png" alt="Buffr one-minute setup flow" class="screenshot">
+        <img src="assets/screenshot-home.png" alt="Buffr home screen — log your work location in seconds, data never leaves your phone" class="screenshot">
+        <img src="assets/screenshot-calendar.png" alt="Buffr calendar view — see your forecast and plan around time off" class="screenshot">
+        <img src="assets/screenshot-company.png" alt="Buffr company tab — official and enforced policy details with Buffr Range chart" class="screenshot">
+        <img src="assets/screenshot-vacation.png" alt="Buffr vacation planner — model how time off affects your buffer" class="screenshot">
+        <img src="assets/screenshot-onboarding.png" alt="Buffr setup — auto-detects your company's RTO policy from our database" class="screenshot">
       </div>
     </div>
   </section>
@@ -163,7 +173,7 @@
   <!-- Value Prop -->
   <section class="value-prop">
     <div class="container">
-      <h2 class="value-text">Buffr is the office attendance tracker built for hybrid work. See your real flexibility in real time — so you can plan your life, not just your commute.</h2>
+      <h2 class="value-text">Buffr is the office attendance tracker built for hybrid work. Track against your company's actual RTO policy, see your real flexibility in real time, and plan your life — not just your commute.</h2>
     </div>
   </section>
 
@@ -179,7 +189,7 @@
             </svg>
           </div>
           <h3>One-tap logging</h3>
-          <p>Log office and work from home days instantly</p>
+          <p>Log office, WFH, vacation, sick, or holiday in seconds</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -189,13 +199,13 @@
             </svg>
           </div>
           <h3>See your buffer</h3>
-          <p>Know how many flex days you have before hitting your RTO threshold</p>
+          <p>Know exactly how many flex days you have before hitting your limit</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#featureGrad3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <defs><linearGradient id="featureGrad3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7B68EE"/><stop offset="100%" stop-color="#4ECDC4"/></linearGradient></defs>
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              <path d="M3 3v18h18"/><polyline points="18 9 13 14 9 10 3 16"/>
             </svg>
           </div>
           <h3>Forecast ahead</h3>
@@ -205,11 +215,31 @@
           <div class="feature-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#featureGrad4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <defs><linearGradient id="featureGrad4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7B68EE"/><stop offset="100%" stop-color="#4ECDC4"/></linearGradient></defs>
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <h3>Company policy data</h3>
+          <p>Auto-detect your company's official and enforced RTO policies from our database</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#featureGrad5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <defs><linearGradient id="featureGrad5" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7B68EE"/><stop offset="100%" stop-color="#4ECDC4"/></linearGradient></defs>
+              <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+            </svg>
+          </div>
+          <h3>Vacation planner</h3>
+          <p>Model how time off affects your buffer before you book it</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#featureGrad6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <defs><linearGradient id="featureGrad6" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7B68EE"/><stop offset="100%" stop-color="#4ECDC4"/></linearGradient></defs>
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
             </svg>
           </div>
           <h3>Private by design</h3>
-          <p>Your attendance data stays on your device. No employer access, ever.</p>
+          <p>Your data stays on your device. No accounts, no tracking, no employer access.</p>
         </div>
       </div>
     </div>
@@ -229,6 +259,10 @@
           <p>Buffr lets you log each workday as office, work from home, vacation, sick, or holiday with a single tap. It then calculates your "buffer" — the number of extra office days you have beyond your company's minimum requirement. Buffr supports both weekly policies (e.g., 3 days per week) and rolling window policies (e.g., 16 days per 8 weeks).</p>
         </details>
         <details class="faq-item">
+          <summary>Does Buffr know my company's RTO policy?</summary>
+          <p>Buffr maintains a database of RTO policies for many companies. When you search for your company during setup, Buffr can auto-detect both the official policy and how it's actually enforced. You can track against either one, or set up custom rules. If your company isn't in our database, you can configure your policy manually in under a minute.</p>
+        </details>
+        <details class="faq-item">
           <summary>Can my employer see my Buffr data?</summary>
           <p>No. Buffr is completely private. All your attendance data is stored locally on your device and is never sent to any server. Your employer has no access to your data, and Buffr doesn't require an account or login. There's no way for anyone — including us — to see your office attendance records.</p>
         </details>
@@ -238,7 +272,7 @@
         </details>
         <details class="faq-item">
           <summary>Is Buffr free?</summary>
-          <p>Buffr is free to download and use. Core features like day logging, buffer calculation, and calendar view are included for free. Buffr Pro unlocks advanced features like multi-week forecasting, enforcement monitoring, policy change alerts, and buffer notifications.</p>
+          <p>Buffr is free to download and use. Core features like day logging, buffer calculation, and calendar view are included for free. Buffr Pro unlocks advanced features like multi-week forecasting, company policy intelligence, vacation impact analysis, policy change alerts, and buffer notifications.</p>
         </details>
         <details class="faq-item">
           <summary>How is Buffr different from a spreadsheet?</summary>
