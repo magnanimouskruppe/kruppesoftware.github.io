@@ -219,6 +219,7 @@ h2.value-text {
 
 .carousel {
   position: relative;
+  max-width: 50%;
   margin: 0 auto;
   overflow: visible;
   cursor: grab;
@@ -453,6 +454,10 @@ h2.value-text {
 
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  .carousel {
+    max-width: 85%;
   }
 
   .carousel-slide {
